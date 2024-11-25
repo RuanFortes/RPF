@@ -22,7 +22,9 @@ public class MenuUsuario {
         this.scanner = new Scanner(System.in);
     }
 
-    // Exibe o menu do usuário com as opções de criação de post, ver perfil, etc.
+    /***
+     * Exibe o menu do usuário com as opções de criação de post, ver perfil, etc.
+     */
     public void exibirMenu() {
         while (true) {
             System.out.println("\n=== Menu do Usuário ===");
@@ -34,7 +36,7 @@ public class MenuUsuario {
             System.out.println("6. Logout");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consome o newline
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -61,7 +63,9 @@ public class MenuUsuario {
         }
     }
 
-    // Cria um novo post
+    /***
+     * Cria um novo post
+     */
     private void criarPost() {
         System.out.print("\nDigite seu post: ");
         String conteudo = scanner.nextLine();
@@ -70,7 +74,9 @@ public class MenuUsuario {
         System.out.println("Post publicado com sucesso!");
     }
 
-    // Exibe o perfil do usuário
+    /***
+     * Exibe o perfil do usuário
+     */
     private void verPerfil() {
         System.out.println("\n=== Meu Perfil ===");
         System.out.println("Nome: " + usuario.getNome());
@@ -84,7 +90,9 @@ public class MenuUsuario {
         }
     }
 
-    // Busca usuários
+    /***
+     * Busca usuários
+     */
     private void buscarUsuarios() {
         System.out.print("\nDigite o nome de usuário para buscar: ");
         String username = scanner.nextLine();
@@ -96,13 +104,17 @@ public class MenuUsuario {
         }
     }
 
-    // Gerencia amizades (adicionar ou remover amigos)
+    /***
+     * Gerencia amizades (adicionar ou remover amigos)
+     */
     private void gerenciarAmizades() {
         System.out.println("\nGerenciar Amizades:");
         // Implementar funcionalidades para adicionar ou remover amigos
     }
 
-    // Exibe o feed de notícias
+    /***
+     * Exibe o feed de notícias
+     */
     private void verFeedNoticias() {
         System.out.println("\nFeed de Notícias:");
         List<Post> posts = gerenciadorPosts.listarPorUsuario(usuario.getId());

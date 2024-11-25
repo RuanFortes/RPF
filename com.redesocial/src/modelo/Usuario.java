@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Usuario {
-
     private Integer id;
     private String nome;
     private String username;
@@ -14,6 +13,16 @@ public class Usuario {
     private List<Usuario> amigos;
     private List<Post> posts;
 
+    /***
+     *
+     * @param nome nome do usuario
+     * @param username o nome do ususario que ira cadastrar
+     * @param email o email de cadastro
+     * @param senha a senha pessoal do usuario
+     * @param dataCadastro a data que o cadastro foi feito
+     * @param amigos os amigos/lista de seguidores
+     * @param posts os post publicados ou visto dos ussarios
+     */
     public Usuario(String nome, String username, String email, String senha,
                    LocalDateTime dataCadastro, List<Usuario> amigos, List<Post> posts) {
         this.nome = nome;

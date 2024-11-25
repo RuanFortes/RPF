@@ -26,7 +26,7 @@ public class GerenciadorUsuarios {
             usuario.setId(proximoId++);
             usuarios.add(usuario);
         } catch (IllegalArgumentException e) {
-            throw e; // Re-throws the exception if validation fails
+            throw e;
         } catch (Exception e) {
             throw new UsuarioException("Erro ao criar usuário: " + e.getMessage(), e);
         }
@@ -67,8 +67,8 @@ public class GerenciadorUsuarios {
         /***
          * Validação da senha (deve ter pelo menos 6 caracteres)
          */
-        if (usuario.getSenha() == null || usuario.getSenha().length() < 6) {
-            throw new IllegalArgumentException("A senha deve ter pelo menos 6 caracteres.");
+        if (usuario.getSenha() == null || usuario.getSenha().length() < 12) {
+            throw new IllegalArgumentException("A senha deve ter pelo menos 12 caracteres.");
         }
     }
 
@@ -175,7 +175,7 @@ public class GerenciadorUsuarios {
         if (usuario1 != null && usuario2 != null) {
             if (usuario1.getAmigos().contains(usuario2)) {
                 usuario1.removerAmigo(usuario2);
-                usuario2.removerAmigo(usuario1);  // Remove a amizade no outro sentido também
+                usuario2.removerAmigo(usuario1);
                 System.out.println("Amizade entre " + usuario1.getUsername() + " e " + usuario2.getUsername() + " removida com sucesso.");
             } else {
                 System.out.println("Eles não são amigos.");
